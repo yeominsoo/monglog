@@ -1,11 +1,15 @@
 import React from 'react';
 import './App.css';
 
+import TopMenu from '../components/frames/TopMenu';
+import MainContent from '../components/frames/MainContent';
+
 const App = () => {
 
     return (
         <>
-            <div className="App"> 시작부분 </div>
+            <TopMenu />
+            <MainContent />
         </>
     )
 }

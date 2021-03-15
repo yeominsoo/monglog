@@ -32,6 +32,11 @@
   height: 23px;
 }
 
+.top-logo a {
+  color: #fff;
+  text-decoration: none;
+}
+
 /* 매뉴 */
 .top-menu-wd {
   float: left;
@@ -100,4 +105,34 @@
   top: 0;
   bottom: 0;
   z-index: -100;
+}
+
+.backgound-div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.backgound-div ul {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.backgound-div ul li {
+  height: 100%;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: opacity;
 }

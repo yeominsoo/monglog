@@ -1,23 +1,29 @@
-import React from 'react';
-import BackgroundSlider from "react-background-slider";
+import React, {useState, useEffect, memo} from 'react';
+import { useTransition, animated} from 'react-spring';
+import '../../client/common.css';
 
-import image1 from '../../images/image1.png';
-import image2 from '../../images/image2.png';
-import image3 from '../../images/image3.png';
-import image4 from '../../images/image4.png';
-import image5 from '../../images/image5.png';
-import image6 from '../../images/image6.png';
-import image7 from '../../images/image7.png';
-import image8 from '../../images/image8.png';
+  const ImageSlider = memo(({duration, transition, images}) => {
+    const [index, set] = useState(0);
+    const imageList = images;
 
-  const ImageSlider = () => {
-    const images = [ image1, image2, image3, image4, image5, image6, image7, image8 ];
-    return (
-      <> 
-        <BackgroundSlider  duration={10} transition={2} images={images} />
-      </>
-    );
-  }
+    const transitions = useTransition(imageList[index], item => item.id, {
+      from: { opacity: 0 },
+      enter: { opacity: 1 },
+      leave: { opacity: 0 },
+      config: { mass: 1, tension: (transition * 100), friction: (transition * 50) },
+    })
+    useEffect(() => void setInterval(() => set(state => (state + 1) % imageList.length), duration), [])
+    
+    return transitions.map(({ item, props, key }) => (
+      <a href="#" >
+        <animated.div
+          key={key}
+          class="bg"
+          style={{ ...props, backgroundImage: `url(${item.url}` }}
+        />
+      </a>
+    ))
+  });
 
   export default ImageSlider;
   

@@ -1,9 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import '../../client/common.css';
+import '../../client/intro.css';
 
 const TopMenu = ({menuList}) => {
-    console.log(menuList);
     return (
         <>
             <div className="top-container">
@@ -16,7 +15,11 @@ const TopMenu = ({menuList}) => {
                             {
                                 menuList.map((v,i)=>{
                                     return (
-                                        <li><Link to={v.path}>{v.name}</Link></li>
+                                        v.isLink ? 
+                                            <li><a href={v.path} target="_blank" rel="noopener noreferrer" >{v.name}</a></li>
+                                            :
+                                            <li><Link to={v.path} >{v.name}</Link></li>
+                                        
                                     )
                                 })
                             }

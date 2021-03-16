@@ -1,6 +1,8 @@
 import React, { memo } from 'react';
-import '../../client/common.css';
+import '../../client/intro.css';
 import ImageSlider from '../slide/ImageSlider';
+
+import TopMenu from './IntroTopMenu';
 
 import image1 from '../../images/image1.png';
 import image2 from '../../images/image2.png';
@@ -11,7 +13,7 @@ import image6 from '../../images/image6.png';
 import image7 from '../../images/image7.png';
 import image8 from '../../images/image8.png';
 
-const MainContent = memo(() => {
+const MainContent = memo(({menuList}) => {
     const images = [ 
         {id: 0, url: image1}, 
         {id: 1, url: image2}, 
@@ -23,10 +25,11 @@ const MainContent = memo(() => {
         {id: 7, url: image8} ];
     return (
         <>
+            <TopMenu menuList={menuList}/>
             <div className="main-content">
                 <div className="contents-wrapper" >
                     <div className="contents-viewport">
-                        <ImageSlider duration={4000} transition={10} images={images}/>
+                        <ImageSlider nextPage={4000} transTime={10} images={images}/>
                     </div>
                 </div>
             </div>

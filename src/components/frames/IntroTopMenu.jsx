@@ -5,13 +5,13 @@ import '../../client/intro.css';
 const TopMenu = ({menuList}) => {
     return (
         <>
-            <div className="top-container">
-                <div className="top-bg">
+            <div className="intro-top-container">
+                <div className="intro-top-bg">
                 </div>
-                <div className="top-wrapper">
-                    <div className="top-menu-wd">
-                        <h1 className="top-logo"><Link to="/">MONGLOG PICTURES</Link></h1>
-                        <ul className="top-menu">
+                <div className="intro-top-wrapper">
+                    <div className="intro-top-menu-wd">
+                        <h1 className="intro-top-logo"><Link to="/">MONGLOG PICTURES</Link></h1>
+                        <ul className="intro-top-menu">
                             {
                                 menuList.map((v,i)=>{
                                     return (

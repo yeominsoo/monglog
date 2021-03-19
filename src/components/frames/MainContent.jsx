@@ -2,20 +2,26 @@ import React, { memo } from 'react';
 import '../../client/main.css';
 import {Route} from 'react-router-dom';
 
-import TopMenu from './MainTopMenu';
+import MainTopMenu from './MainTopMenu';
 
 const MainContent = memo(({menuList}) => {
    
     return (
         <>
-            <TopMenu menuList={menuList}/>
-            {
-                menuList.map((v,i) => {
-                    return (
-                            !v.isLink ? <Route exact path={v.path} component={v.comp} /> : <> </>
-                    )
-                })
-            }
+            <MainTopMenu menuList={menuList}/>
+            <div className="main-content">
+                <div className="main-contents-wrapper" >
+                    <div className="main-contents-page">
+                        {
+                            menuList.map((v,i) => {
+                                return (
+                                        !v.isLink ? <Route exact path={v.path} component={v.comp} /> : <> </>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+            </div>
         </>
     )
 })

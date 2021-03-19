@@ -20,7 +20,7 @@ import '../../client/intro.css';
       <Link to="/main/gallery1">
         <animated.div
           key={key}
-          class="bg"
+          className="bg"
           style={{ ...props, backgroundImage: `url(${item.url}` }}
         />
       </Link>

@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import '../../client/intro.css';
 import ImageSlider from '../slide/ImageSlider';
 
-import TopMenu from './IntroTopMenu';
+import IntroTopMenu from './IntroTopMenu';
 
 import image1 from '../../images/image1.png';
 import image2 from '../../images/image2.png';
@@ -25,10 +25,10 @@ const MainContent = memo(({menuList}) => {
         {id: 7, url: image8} ];
     return (
         <>
-            <TopMenu menuList={menuList}/>
-            <div className="main-content">
-                <div className="contents-wrapper" >
-                    <div className="contents-viewport">
+            <IntroTopMenu menuList={menuList}/>
+            <div className="intro-content">
+                <div className="intro-contents-wrapper" >
+                    <div className="intro-contents-viewport">
                         <ImageSlider nextPage={4000} transTime={10} images={images}/>
                     </div>
                 </div>

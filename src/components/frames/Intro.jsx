@@ -12,7 +12,8 @@ const Intro = ({menuList}) => {
                     return(
                         <IntroContent menuList={menuList} mainPath={props.match.url}/>
                     )
-                }}/>
+                }}
+            />
             <Route path="/main" 
                 render={(props) => {
                     return(

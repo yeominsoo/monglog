@@ -21,6 +21,7 @@ const App = () => {
             {name: "CONFIRM",       path: "/main/confirm",      comp: Confirm,      isLink:false},
             {name: "BLOG",          path: "https://blog.naver.com/jeongminsu0523",  comp: null,        isLink:true},
             {name: "INSTAGRAM",     path: "https://www.instagram.com/w0_0jm",       comp: null,        isLink:true},
+            {name: "BABY",          path: "https://www.instagram.com/yeo2an",       comp: null,        isLink:true},
         ];
 
     return (

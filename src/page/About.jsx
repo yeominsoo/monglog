@@ -19,7 +19,7 @@ const About = memo(({menuList}) => {
     };
 
     return (
-        <>
+        <> 
             <h2 style={{backgroundColor: '#dddddd'}} >About 
                 
             </h2>
